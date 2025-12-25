@@ -2,9 +2,7 @@
 
 ## Overview
 
-Production-ready portfolio risk management system for hedge funds and asset managers. Processes real-time market data, calculates Value at Risk (VaR), and provides ML-based portfolio optimization.
-
-**Target Companies:** Two Sigma, Citadel, Jane Street, BlackRock, Goldman Sachs, JP Morgan
+Production-ready portfolio risk management system . Processes real-time market data, calculates Value at Risk (VaR), and provides ML-based portfolio optimization.
 
 ## 🚀 Tech Stack
 
