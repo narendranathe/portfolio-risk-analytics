@@ -1,81 +1,134 @@
-﻿"""
-Value at Risk (VaR) Calculator
-Demonstrates financial risk analytics for hedge funds
+"""
+Simple VaR Calculator
+Calculates Value at Risk using historical simulation method
 """
 
 import numpy as np
-from typing import List
+from typing import Tuple
 
 
-class SimpleVaRCalculator:
-    """Calculate Value at Risk for a portfolio"""
+def calculate_var(
+    prices: np.ndarray, 
+    confidence_95: float = 0.95,
+    confidence_99: float = 0.99
+) -> Tuple[float, float]:
+    """
+    Calculate Value at Risk (VaR) using historical simulation method
     
-    def __init__(self, confidence_level: float = 0.95):
-        self.confidence_level = confidence_level
-        self.alpha = 1 - confidence_level
+    Args:
+        prices: Array of historical prices
+        confidence_95: Confidence level for 95% VaR (default: 0.95)
+        confidence_99: Confidence level for 99% VaR (default: 0.99)
     
-    def calculate_var(self, returns: List[float], portfolio_value: float) -> dict:
-        """
-        Calculate Value at Risk
-        
-        Parameters:
-        - returns: List of historical daily returns (as decimals, e.g., 0.01 for 1%)
-        - portfolio_value: Total portfolio value in dollars
-        
-        Returns:
-        - Dictionary with VaR results
-        """
-        returns = np.array(returns)
-        sorted_returns = np.sort(returns)
-        
-        var_index = int(len(sorted_returns) * self.alpha)
-        var_return = sorted_returns[var_index]
-        var_amount = abs(var_return * portfolio_value)
-        
-        cvar_returns = sorted_returns[:var_index]
-        cvar_return = np.mean(cvar_returns)
-        cvar_amount = abs(cvar_return * portfolio_value)
-        
-        return {
-            'confidence_level': self.confidence_level,
-            'portfolio_value': portfolio_value,
-            'var_amount': round(var_amount, 2),
-            'var_percentage': round((var_amount / portfolio_value) * 100, 2),
-            'cvar_amount': round(cvar_amount, 2),
-            'worst_return': round(sorted_returns[0] * 100, 2),
-            'best_return': round(sorted_returns[-1] * 100, 2)
-        }
+    Returns:
+        Tuple of (VaR at 95% confidence, VaR at 99% confidence)
+    
+    Example:
+        >>> prices = np.array([100, 102, 98, 101, 99])
+        >>> var_95, var_99 = calculate_var(prices)
+        >>> print(f"VaR 95%: ${var_95:.2f}, VaR 99%: ${var_99:.2f}")
+    """
+    
+    if len(prices) < 2:
+        raise ValueError("Need at least 2 price observations")
+    
+    # Convert to numpy array if not already
+    prices = np.array(prices)
+    
+    # Calculate returns
+    returns = np.diff(prices) / prices[:-1]
+    
+    # Calculate VaR at different confidence levels
+    var_95 = np.percentile(returns, (1 - confidence_95) * 100)
+    var_99 = np.percentile(returns, (1 - confidence_99) * 100)
+    
+    # Convert to dollar values based on current price
+    current_price = prices[-1]
+    var_95_dollar = abs(var_95 * current_price)
+    var_99_dollar = abs(var_99 * current_price)
+    
+    return var_95_dollar, var_99_dollar
 
 
-def demo():
-    """Demonstrate VaR calculation"""
-    print("=" * 80)
-    print("VALUE AT RISK (VaR) CALCULATOR DEMO")
-    print("=" * 80)
-    print()
+def calculate_var_from_returns(
+    returns: np.ndarray,
+    current_value: float,
+    confidence_level: float = 0.95
+) -> float:
+    """
+    Calculate VaR from returns array
     
-    np.random.seed(42)
-    returns = np.random.normal(0.0005, 0.015, 252)
-    portfolio_value = 10_000_000
+    Args:
+        returns: Array of historical returns
+        current_value: Current portfolio value
+        confidence_level: Confidence level (default: 0.95)
     
-    calculator = SimpleVaRCalculator(confidence_level=0.95)
-    results = calculator.calculate_var(returns.tolist(), portfolio_value)
+    Returns:
+        VaR in dollar terms
+    """
     
-    print(f"Portfolio Value: ${results['portfolio_value']:,}")
-    print(f"Confidence Level: {results['confidence_level']*100}%")
-    print()
-    print(f"📉 95% VaR: ${results['var_amount']:,}")
-    print(f"   This means: In 95% of cases, daily loss will not exceed ${results['var_amount']:,}")
-    print(f"   ({results['var_percentage']}% of portfolio)")
-    print()
-    print(f"📉 95% CVaR (Expected Shortfall): ${results['cvar_amount']:,}")
-    print(f"   This means: If we exceed VaR, average loss is ${results['cvar_amount']:,}")
-    print()
-    print(f"Best Daily Return: +{results['best_return']}%")
-    print(f"Worst Daily Return: {results['worst_return']}%")
-    print()
-    print("=" * 80)
+    if len(returns) < 2:
+        raise ValueError("Need at least 2 return observations")
+    
+    # Calculate VaR
+    var_percentile = np.percentile(returns, (1 - confidence_level) * 100)
+    var_dollar = abs(var_percentile * current_value)
+    
+    return var_dollar
+
+
+def calculate_portfolio_var(
+    portfolio_values: np.ndarray,
+    confidence_level: float = 0.95
+) -> float:
+    """
+    Calculate VaR for a portfolio
+    
+    Args:
+        portfolio_values: Array of historical portfolio values
+        confidence_level: Confidence level (default: 0.95)
+    
+    Returns:
+        Portfolio VaR in dollar terms
+    """
+    
+    if len(portfolio_values) < 2:
+        raise ValueError("Need at least 2 portfolio value observations")
+    
+    # Calculate portfolio returns
+    returns = np.diff(portfolio_values) / portfolio_values[:-1]
+    
+    # Calculate VaR
+    current_value = portfolio_values[-1]
+    var_dollar = calculate_var_from_returns(returns, current_value, confidence_level)
+    
+    return var_dollar
 
 
 if __name__ == "__main__":
-    demo()
+    # Test the VaR calculator
+    print("=" * 80)
+    print("VaR CALCULATOR TEST")
+    print("=" * 80)
+    print()
+    
+    # Sample price data
+    prices = np.array([100, 102, 98, 101, 99, 103, 97, 100, 102, 98])
+    
+    print(f"Sample prices: {prices}")
+    print(f"Number of observations: {len(prices)}")
+    print()
+    
+    # Calculate VaR
+    var_95, var_99 = calculate_var(prices)
+    
+    print(f"Current Price: ${prices[-1]:.2f}")
+    print(f"VaR (95% confidence): ${var_95:.2f}")
+    print(f"VaR (99% confidence): ${var_99:.2f}")
+    print()
+    
+    print("Interpretation:")
+    print(f"  - There is a 95% chance that losses will not exceed ${var_95:.2f}")
+    print(f"  - There is a 99% chance that losses will not exceed ${var_99:.2f}")
+    print()
+    print("=" * 80)
