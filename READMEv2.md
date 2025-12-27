@@ -36,18 +36,18 @@ A comprehensive real-time portfolio risk analysis platform that demonstrates ent
                   │
                   ▼
 ┌─────────────────────────────────────────────────────────────────┐
-│                  STREAMING INGESTION                             │
-│  ┌──────────────────┐         ┌──────────────────┐             │
-│  │  Apache Kafka    │         │  AWS Kinesis     │             │
-│  │  - 3 Brokers     │         │  - Cloud Stream  │             │
-│  │  - Zookeeper     │         │  - 5000+ records │             │
-│  │  - 47.8 TPS      │         │  - boto3 client  │             │
-│  └──────────────────┘         └──────────────────┘             │
+│                  STREAMING INGESTION                            │
+│  ┌──────────────────┐         ┌──────────────────┐              │
+│  │  Apache Kafka    │         │  AWS Kinesis     │              │
+│  │  - 3 Brokers     │         │  - Cloud Stream  │              │
+│  │  - Zookeeper     │         │  - 5000+ records │              │
+│  │  - 47.8 TPS      │         │  - boto3 client  │              │
+│  └──────────────────┘         └──────────────────┘              │
 └─────────────────┬───────────────────────────────────────────────┘
                   │
                   ▼
 ┌─────────────────────────────────────────────────────────────────┐
-│                 STREAM PROCESSING                                │
+│                 STREAM PROCESSING                               │
 │  ┌──────────────────────────────────────────────────────────┐   │
 │  │  Apache Spark Structured Streaming                       │   │
 │  │  - Real-time windowed aggregations (5-second windows)    │   │
@@ -59,7 +59,7 @@ A comprehensive real-time portfolio risk analysis platform that demonstrates ent
                   │
                   ▼
 ┌─────────────────────────────────────────────────────────────────┐
-│                   RISK ENGINE                                    │
+│                   RISK ENGINE                                   │
 │  ┌──────────────────────────────────────────────────────────┐   │
 │  │  Value at Risk (VaR) Calculator                          │   │
 │  │  - Historical simulation method                          │   │
@@ -71,7 +71,7 @@ A comprehensive real-time portfolio risk analysis platform that demonstrates ent
                   │
                   ▼
 ┌─────────────────────────────────────────────────────────────────┐
-│                     API LAYER                                    │
+│                     API LAYER                                   │
 │  ┌──────────────────────────────────────────────────────────┐   │
 │  │  FastAPI REST API                                        │   │
 │  │  - GET  /status              → System health             │   │
@@ -85,7 +85,7 @@ A comprehensive real-time portfolio risk analysis platform that demonstrates ent
                   │
                   ▼
 ┌─────────────────────────────────────────────────────────────────┐
-│                  VISUALIZATION                                   │
+│                  VISUALIZATION                                  │
 │  ┌──────────────────────────────────────────────────────────┐   │
 │  │  Streamlit Interactive Dashboard                         │   │
 │  │  - Executive Dashboard: KPIs, alerts, recommendations    │   │
