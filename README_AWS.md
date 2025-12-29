@@ -1,22 +1,26 @@
-﻿# 🎯 Real-Time Portfolio Risk Analytics System
+﻿#  Real-Time Portfolio Risk Analytics System (Producer and Consumer Demo)
 
-## Production-Ready AWS Streaming Platform
+## AWS Streaming Platform
 
 Enterprise-grade portfolio risk management system processing **5,000+ market ticks** in real-time using **AWS Kinesis**. Built for hedge funds, asset managers, and quantitative trading firms.
 
-### 🎉 LIVE DEMO RESULTS
+###  LIVE DEMO RESULTS
 
-- ✅ **5,168 ticks** sent to AWS Kinesis
-- ✅ **2,063 records** processed successfully
-- ✅ **17.2 TPS** sustained throughput
-- ✅ **11.4M+ shares** volume tracked
-- ✅ **5 symbols** (AAPL, GOOGL, MSFT, AMZN, JPM)
+--> **5,168 ticks** sent to AWS Kinesis
+
+--> **2,063 records** processed successfully
+
+--> **17.2 TPS** sustained throughput
+
+--> **11.4M+ shares** volume tracked
+
+--> **5 symbols** (AAPL, GOOGL, MSFT, AMZN, JPM)
 
 **Target Companies:** Two Sigma, Citadel, Jane Street, BlackRock, Goldman Sachs, JP Morgan
 
 ---
 
-## 🏗️ AWS Cloud Architecture
+##  AWS Cloud Architecture
 ```
 Market Data → Kinesis Producer → AWS Kinesis Stream → Kinesis Consumer → CSV Storage
    (17 TPS)      (boto3)         (Cloud Processing)    (Real-time)      (Analytics)
@@ -27,17 +31,21 @@ Market Data → Kinesis Producer → AWS Kinesis Stream → Kinesis Consumer →
 
 ---
 
-## 🚀 AWS Services Implemented
+##  AWS Services Implemented
 
-- ✅ **Amazon Kinesis** - Real-time data streaming
-- ✅ **AWS Lambda** - Serverless VaR calculations (ready to deploy)
-- ✅ **Amazon S3** - Data lake storage
-- ✅ **IAM** - Security and access control
-- ✅ **CloudWatch** - Monitoring (configured)
+--> **Amazon Kinesis** - Real-time data streaming
+
+--> **AWS Lambda** - Serverless VaR calculations (ready to deploy)
+
+--> **Amazon S3** - Data lake storage
+
+--> **IAM** - Security and access control
+
+--> **CloudWatch** - Monitoring (configured)
 
 ---
 
-## 📊 Live System Metrics
+##  Live System Metrics
 
 ### Producer Performance
 - **Ticks Sent:** 5,168
@@ -60,45 +68,45 @@ Market Data → Kinesis Producer → AWS Kinesis Stream → Kinesis Consumer →
 
 ---
 
-## 🛠️ Currently Implemented
+##  Currently Implemented
 
-### ✅ Market Data Simulator
+###  Market Data Simulator
 - Real-time price generation using Geometric Brownian Motion
 - Realistic bid/ask spreads and volume
 - 50+ ticks/second capability
 
-### ✅ AWS Kinesis Producer
+###  AWS Kinesis Producer
 - Asynchronous streaming with asyncio
 - 17.2 TPS sustained throughput
 - 5,168 ticks successfully sent to AWS
 - Partition by symbol for parallel processing
 
-### ✅ AWS Kinesis Consumer
+###  AWS Kinesis Consumer
 - Real-time stream processing
 - 2,063 records processed
 - Statistical analysis (price range, volume, symbols)
 - CSV export with timestamps
 
-### ✅ VaR Calculator
+###  VaR Calculator
 - 95% Value at Risk calculation
 - CVaR (Expected Shortfall)
 - Historical simulation methodology
 - Ready for Lambda deployment
 
-### ✅ AWS Infrastructure
+###  AWS Infrastructure
 - S3 bucket: portfolio-risk-narendranath
 - Kinesis stream: market-data-stream
 - IAM policies configured
 - boto3 SDK integration
 
-### ✅ Jupyter Notebooks
+###  Jupyter Notebooks
 - Interactive VaR analysis
 - Beautiful matplotlib/seaborn visualizations
 - Portfolio performance metrics
 
 ---
 
-## 🎯 Quick Start
+##  Quick Start
 
 ### Prerequisites
 
@@ -153,26 +161,26 @@ jupyter lab
 
 ---
 
-## 📈 Sample Output
+##  Sample Output
 
 ### Producer Output
 ```
-🚀 Starting Kinesis market data stream
-📊 Stream: market-data-stream
-⚡ Target: 50 ticks/second
+--> Starting Kinesis market data stream
+--> Stream: market-data-stream
+--> Target: 50 ticks/second
 --------------------------------------------------------------------------------
-📤 Sent 100 ticks | 17.7 TPS | JPM: $151.29
-📤 Sent 1000 ticks | 17.2 TPS | JPM: $132.87
-📤 Sent 5000 ticks | 17.2 TPS | JPM: $144.63
+[X] Sent 100 ticks | 17.7 TPS | JPM: $151.29
+[X] Sent 1000 ticks | 17.2 TPS | JPM: $132.87
+[X] Sent 5000 ticks | 17.2 TPS | JPM: $144.63
 --------------------------------------------------------------------------------
-✅ Stream complete! Total: 5,168 ticks
+--> Stream complete! Total: 5,168 ticks
 ```
 
 ### Consumer Output
 ```
-📥 Processed 100 records | JPM: $134.91
-📥 Processed 1000 records | JPM: $142.16
-📥 Processed 2000 records | JPM: $151.80
+[X] Processed 100 records | JPM: $134.91
+[X] Processed 1000 records | JPM: $142.16
+[X] Processed 2000 records | JPM: $151.80
 --------------------------------------------------------------------------------
 Statistics:
   Unique symbols: 5
@@ -183,7 +191,7 @@ Data saved to: data/processed/kinesis_data_20251226_151429.csv
 
 ---
 
-## 🎯 Roadmap
+##  Roadmap
 
 - [x] Project structure
 - [x] Market data simulator
@@ -201,73 +209,73 @@ Data saved to: data/processed/kinesis_data_20251226_151429.csv
 
 ---
 
-## 🏆 Skills Demonstrated
+##  Skills Demonstrated
 
 ### AWS Cloud Engineering
-- ✅ Kinesis real-time streaming (5,168 ticks)
-- ✅ Lambda serverless functions (ready)
-- ✅ S3 data lake design
-- ✅ IAM security policies
-- ✅ boto3 SDK expertise
+-  Kinesis real-time streaming (5,168 ticks)
+-  Lambda serverless functions (ready)
+-  S3 data lake design
+-  IAM security policies
+-  boto3 SDK expertise
 
 ### Data Engineering
-- ✅ Real-time data processing (17.2 TPS)
-- ✅ Producer/Consumer architecture
-- ✅ Distributed systems
-- ✅ Stream processing
-- ✅ Data serialization (JSON)
+-  Real-time data processing (17.2 TPS)
+-  Producer/Consumer architecture
+-  Distributed systems
+-  Stream processing
+-  Data serialization (JSON)
 
 ### Financial Analytics
-- ✅ Value at Risk (VaR)
-- ✅ Market data processing
-- ✅ Portfolio analytics
-- ✅ Statistical analysis
+-  Value at Risk (VaR)
+-  Market data processing
+-  Portfolio analytics
+-  Statistical analysis
 
 ### Software Engineering
-- ✅ Python asyncio
-- ✅ Git version control
-- ✅ Professional documentation
-- ✅ Test automation
+-  Python asyncio
+-  Git version control
+-  Professional documentation
+-  Test automation
 
 ---
 
-## 📊 Performance Metrics
+##  Performance Metrics
 
 | Metric | Target | Achieved |
 |--------|--------|----------|
-| Market Data Throughput | 50 TPS | ✅ 17.2 TPS sustained |
-| Records Processed | 1,000+ | ✅ 2,063 records |
-| End-to-End Latency | <1 second | ✅ Sub-second |
-| System Uptime | 99%+ | ✅ 100% (5 min test) |
-| Data Accuracy | 100% | ✅ All records valid |
+| Market Data Throughput | 50 TPS | *17.2 TPS sustained* |
+| Records Processed | 1,000+ |  *2,063 records* |
+| End-to-End Latency | <1 second | *Sub-second* |
+| System Uptime | 99%+ |  *100% (5 min test)* |
+| Data Accuracy | 100% |  *All records valid* |
 
 ---
 
-## 👤 Author
+##  Author
 
 **Narendranath Edara**
 
-- 📧 Email: edara.narendranath@gmail.com
-- 💼 LinkedIn: [narendranathe](https://linkedin.com/in/narendranathe)
-- 🐙 GitHub: [narendranathe](https://github.com/narendranathe)
+-  Email: edara.narendranath@gmail.com
+-  LinkedIn: [narendranathe](https://linkedin.com/in/narendranathe)
+-  GitHub: [narendranathe](https://github.com/narendranathe)
 
 ---
 
-## 📝 License
+##  License
 
-This project is for portfolio demonstration purposes.
-
----
-
-## 🙏 Acknowledgments
-
-Built using AWS cloud-native services and modern data engineering best practices. Production-ready architecture suitable for hedge funds and quantitative trading firms.
+This project is for portfolio demonstration purposes. Under MIT license
 
 ---
 
-**⭐ Star this repo if you found it useful!**
+##  Acknowledgments
 
-**💼 Hiring?** This project demonstrates expertise in:
+Built using AWS cloud-native services and modern data engineering best practices.
+
+---
+
+** Star this repo if you found it useful!**
+
+** Hiring?** This project demonstrates expertise in:
 
 - Real-time data streaming on AWS
 - Distributed systems architecture
