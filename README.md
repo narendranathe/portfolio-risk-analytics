@@ -1,4 +1,4 @@
-# 📊 Real-Time Portfolio Risk Analysis Platform
+#  Real-Time Portfolio Risk Analysis Platform
 
 > **A production-grade financial risk analytics system featuring streaming data ingestion, real-time VaR calculations, REST API, and interactive dashboard**
 
@@ -10,24 +10,24 @@
 
 ---
 
-## 🎯 **Project Overview**
+##  **Project Overview**
 
 A comprehensive real-time portfolio risk analysis platform that demonstrates enterprise-grade data engineering and financial analytics capabilities. The system processes streaming market data through a complete pipeline from ingestion to visualization, calculating Value at Risk (VaR) metrics and providing actionable insights for risk management decisions.
 
 ### **Key Capabilities**
 
-- 📊 **Real-time streaming** with Apache Kafka (47.8 TPS sustained)
-- ⚡ **Stream processing** with Apache Spark (5-second windowed aggregations)
-- 🔥 **AWS Kinesis integration** for cloud-native streaming (5,000+ records)
-- 📈 **Value at Risk calculations** at 95% and 99% confidence levels
-- 🌐 **RESTful API** with FastAPI for programmatic access
-- 🎨 **Interactive dashboard** with Streamlit for executive insights
-- 🐳 **Containerized infrastructure** with Docker Compose
-- 📊 **Advanced analytics** including concentration risk, diversification, and portfolio optimization
+-  **Real-time streaming** with Apache Kafka (47.8 TPS sustained)
+-  **Stream processing** with Apache Spark (5-second windowed aggregations)
+-  **AWS Kinesis integration** for cloud-native streaming (5,000+ records)
+-  **Value at Risk calculations** at 95% and 99% confidence levels
+-  **RESTful API** with FastAPI for programmatic access
+-  **Interactive dashboard** with Streamlit for executive insights
+-  **Containerized infrastructure** with Docker Compose
+-  **Advanced analytics** including concentration risk, diversification, and portfolio optimization
 
 ---
 
-## 🏗️ **Architecture**
+##  **Architecture**
 ```
 ┌─────────────────────────────────────────────────────────────────┐
 │                     DATA SOURCES                                │
@@ -99,14 +99,13 @@ A comprehensive real-time portfolio risk analysis platform that demonstrates ent
 
 ---
 
-## 🚀 **Quick Start**
+##  **Quick Start**
 
 ### **Prerequisites**
 
 - Python 3.11
 - Docker Desktop
 - Git
-- 8GB+ RAM recommended
 
 ### **1. Clone Repository**
 ```bash
@@ -157,13 +156,13 @@ streamlit run src/dashboard/app.py
 
 ### **5. Access Applications**
 
-- 🎨 **Dashboard:** http://localhost:8501
-- 📡 **API Docs:** http://localhost:8000/docs
-- 📊 **API Endpoint:** http://localhost:8000/portfolio/var
+-  **Dashboard:** http://localhost:8501
+-  **API Docs:** http://localhost:8000/docs
+-  **API Endpoint:** http://localhost:8000/portfolio/var
 
 ---
 
-## 📊 **Features & Capabilities**
+##  **Features & Capabilities**
 
 ### **Real-Time Data Streaming**
 
@@ -255,7 +254,7 @@ Body: {
 
 ---
 
-## 📈 **Performance Metrics**
+##  **Performance Metrics**
 
 | Metric | Value |
 |--------|-------|
@@ -269,7 +268,7 @@ Body: {
 
 ---
 
-## 🛠️ **Technology Stack**
+##  **Technology Stack**
 
 ### **Data Engineering**
 - **Apache Kafka**: Distributed streaming platform
@@ -294,7 +293,7 @@ Body: {
 
 ---
 
-## 📁 **Project Structure**
+##  **Project Structure**
 ```
 portfolio-risk-analysis/
 ├── src/
@@ -323,39 +322,39 @@ portfolio-risk-analysis/
 
 ---
 
-## 🎓 **Key Learning Outcomes**
+##  **Key Learning Outcomes**
 
 ### **Data Engineering**
-✅ Real-time data streaming with Apache Kafka  
-✅ Stream processing with Apache Spark Structured Streaming  
-✅ AWS cloud services integration (Kinesis)  
-✅ Distributed systems architecture  
-✅ Docker containerization & orchestration  
+[X] Real-time data streaming with Apache Kafka  
+[X] Stream processing with Apache Spark Structured Streaming  
+[X]  AWS cloud services integration (Kinesis)  
+[X]  Distributed systems architecture  
+[X]  Docker containerization & orchestration  
 
 ### **Software Engineering**
-✅ RESTful API design with FastAPI  
-✅ Asynchronous Python programming  
-✅ Production-grade error handling  
-✅ API documentation with OpenAPI/Swagger  
-✅ WebSocket real-time communication  
+[X]  RESTful API design with FastAPI  
+[X]  Asynchronous Python programming  
+[X]  Production-grade error handling  
+[X]  API documentation with OpenAPI/Swagger  
+[X]  WebSocket real-time communication  
 
 ### **Financial Engineering**
-✅ Value at Risk (VaR) methodology  
-✅ Portfolio risk metrics & analytics  
-✅ Concentration risk measurement (HHI)  
-✅ Diversification benefit calculation  
-✅ Risk-adjusted performance evaluation  
+[X]  Value at Risk (VaR) methodology  
+[X]  Portfolio risk metrics & analytics  
+[X]  Concentration risk measurement (HHI)  
+[X]  Diversification benefit calculation  
+[X]  Risk-adjusted performance evaluation  
 
 ### **Data Visualization**
-✅ Interactive dashboards with Streamlit  
-✅ Advanced charts with Plotly  
-✅ Real-time data refresh patterns  
-✅ Executive-level reporting  
-✅ Actionable insights presentation  
+[X]  Interactive dashboards with Streamlit  
+[X]  Advanced charts with Plotly  
+[X]  Real-time data refresh patterns  
+[X]  Executive-level reporting  
+[X]  Actionable insights presentation  
 
 ---
 
-## 🔧 **Configuration**
+##  **Configuration**
 
 ### **Kafka Settings**
 ```yaml
@@ -383,7 +382,7 @@ CORS_ORIGINS = ["*"]  # Configure for production
 
 ---
 
-## 📊 **Sample Output**
+##  **Sample Output**
 
 ### **VaR Calculation Result**
 ```json
@@ -399,14 +398,14 @@ CORS_ORIGINS = ["*"]  # Configure for production
 
 ### **Risk Alert Example**
 ```
-⚠️ HIGH CONCENTRATION RISK
+ HIGH CONCENTRATION RISK
 Portfolio is concentrated (HHI: 0.35)
 Action: Reduce position sizes in top holdings
 ```
 
 ---
 
-## 🐛 **Troubleshooting**
+##  **Troubleshooting**
 
 ### **Kafka Connection Issues**
 ```bash
@@ -440,7 +439,7 @@ python src/api/main.py
 
 ---
 
-## 🚀 **Future Enhancements**
+##  **Future Enhancements**
 
 - [ ] Machine learning for VaR prediction
 - [ ] Multi-factor risk models
@@ -457,20 +456,20 @@ python src/api/main.py
 
 ---
 
-## 📝 **License**
+##  **License**
 
 This project is licensed under the MIT License - see the LICENSE file for details.
 
 ---
 
-## 👤 **Author**
+##  **Author**
 
-**Naren**  
+**Narendranath Edara**  
 *Data Engineer | Financial Analytics Enthusiast*
 
 ---
 
-## 🙏 **Acknowledgments**
+##  **Acknowledgments**
 
 - Apache Kafka community for robust streaming platform
 - Apache Spark community for powerful processing engine
@@ -480,18 +479,18 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ---
 
-## 📞 **Contact**
+##  **Contact**
 
 For questions, suggestions, or collaboration opportunities:
-- 📧 Email: your.email@example.com
-- 💼 LinkedIn: linkedin.com/in/yourprofile
-- 🐙 GitHub: github.com/yourusername
+-  Email: edara.narendranath@gmail.com
+-  LinkedIn: [linkedin.com/in/narendranathe](https://www.linkedin.com/in/narendranathe/)
+-  GitHub: [github.com/narendranathe](https://github.com/narendranathe)
 
 ---
 
 <div align="center">
 
-### ⭐ If you find this project useful, please consider giving it a star!
+###  If you find this project useful, please consider giving it a star!
 
 **Built with ❤️ for the Data Engineering & Financial Analytics Community**
 
